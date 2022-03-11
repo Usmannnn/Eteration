@@ -8,10 +8,14 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "test": "jest"
+    "test": "node_modules/.bin/jest"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "jest-expo",
+    "setupFiles": ["./jestSetupFile.js"],
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-native/extend-expect"
+    ]
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "~1.15.0",
@@ -28,8 +32,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
-    "jest": "^27.5.1",
-    "jest-expo": "^44.0.1",
+    "@testing-library/jest-native": "^4.0.4",
+    "@testing-library/react-native": "^9.0.0",
+    "jest-expo": "^44.0.0",
     "react-test-renderer": "^17.0.1"
   },
   "private": true

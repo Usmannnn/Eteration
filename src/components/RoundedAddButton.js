@@ -10,6 +10,7 @@ const RoundedAddButton = () => {
 
     return (
         <TouchableOpacity 
+            testID='roundedAddBtn'
             style={styles.container}
             onPress={() => navigation.navigate("Add")}
         >

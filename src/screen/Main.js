@@ -22,6 +22,7 @@ const Main = () => {
             {data && <FlatList
                 data={data}
                 keyExtractor={(_, i) => i.toString()}
+                showsVerticalScrollIndicator={false}
                 renderItem={({ item, index }) => {
                     return (
                         <PersonCard
@@ -34,7 +35,7 @@ const Main = () => {
                 }}
                 style={{ borderTopWidth: 1, borderTopColor: "gray" }}
             />}
-            <RoundedAddButton />
+            <RoundedAddButton  />
         </View>
     )
 }

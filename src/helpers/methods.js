@@ -28,7 +28,6 @@ export const handleDeleteItemFromStorage = ({ itemId }) => {
         })
 }
 
-
 const storeData = async (value) => {
     try {
         const jsonValue = JSON.stringify(value)
@@ -46,14 +45,4 @@ export const getData = async () => {
     } catch (e) {
         console.log(e, "Error when reading data")
     }
-}
-
-const removeValue = async (key) => {
-    try {
-        await AsyncStorage.removeItem(key)
-    } catch (e) {
-        console.log(e, `Error when removing ${key} forom storage`)
-    }
-
-    console.log('Done.')
 }
