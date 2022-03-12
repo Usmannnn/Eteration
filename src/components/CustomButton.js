@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { StyleSheet, Text, TouchableOpacity, Keyboard, Animated } from 'react-native'
 
-const CustomButton = ({ label, isKeyboardSensitive, onAction }) => {
+const CustomButton = ({ label, isKeyboardSensitive, onAction, testID }) => {
 
     const animatedPosition = useRef(new Animated.Value(0)).current
     const [keyboardStatus, setKeyboardStatus] = useState(false);
@@ -31,7 +31,7 @@ const CustomButton = ({ label, isKeyboardSensitive, onAction }) => {
 
     return (
         <Animated.View style={[styles.container, { bottom: animatedPosition}]}>
-            <TouchableOpacity style={styles.buttonContainer} onPress={() => onAction()}>
+            <TouchableOpacity testID='customButton' style={styles.buttonContainer} onPress={() => onAction()}>
                 <Text style={{ color: "white", fontWeight: "bold", fontSize: 16 }}>{label}</Text>
             </TouchableOpacity>
         </Animated.View>

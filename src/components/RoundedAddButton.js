@@ -4,12 +4,12 @@ import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 
 
-const RoundedAddButton = () => {
+const RoundedAddButton = ({ onMockNavigate }) => {
 
     const navigation = useNavigation()
 
     return (
-        <TouchableOpacity 
+        <TouchableOpacity
             testID='roundedAddBtn'
             style={styles.container}
             onPress={() => navigation.navigate("Add")}
