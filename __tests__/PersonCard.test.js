@@ -1,6 +1,8 @@
 import React from 'react'
 import { fireEvent, render } from '@testing-library/react-native'
 import PersonCard from '../src/components/PersonCard'
+import renderer from "react-test-renderer";
+
 
 describe('personCard actions', () => {
 
@@ -52,6 +54,11 @@ describe('personCard actions', () => {
       expect(getByTestId("avatar")).not.toBeNull()
       expect(getByTestId("personName")).not.toBeNull()
    })
+
+   it(`renders correctly`, () => {
+      const card = renderer.create(<PersonCard key={index}  item={item}/>).toJSON();
+      expect(card.children.length).toBe(2);
+   });
 });
 
 

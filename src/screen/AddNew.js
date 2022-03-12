@@ -28,7 +28,7 @@ const AddNew = () => {
 
     return (
         <View style={styles.container}>
-            <ScrollView style={styles.formContainer} showsVerticalScrollIndicator={false}>
+            <ScrollView testID="scrollView" style={styles.formContainer} showsVerticalScrollIndicator={false}>
                 <CustomInput
                     placeholder={"John Doe"}
                     label={"Name Surname:"}
