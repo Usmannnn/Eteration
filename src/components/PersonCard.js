@@ -5,18 +5,20 @@ import { Ionicons } from '@expo/vector-icons';
 const PersonCard = ({ item, index, onDetail, onDelete }) => {
 
     return (
-        <View key={index} style={styles.container}>
+        <View key={index} style={styles.container} testID="personCard">
             <TouchableOpacity 
                 style={styles.innerContainer}
                 onPress={() => onDetail()}
+                testID='onDetailBtn'
             >
                 <Image
+                    testID='avatar'
                     source={{ uri: item.avatar }}
                     style={{ width: 25, height: 40, marginRight: 15 }}
                 />
-                <Text style={{fontWeight: "bold", fontSize: 15}}>{item.name}</Text>
+                <Text testID="personName" style={{fontWeight: "bold", fontSize: 15}}>{item.name}</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => onDelete()} >
+            <TouchableOpacity testID='onDeleteBtn' onPress={() => onDelete()} >
                 <Ionicons name="trash-outline" size={25} color="black" />
             </TouchableOpacity>
         </View>

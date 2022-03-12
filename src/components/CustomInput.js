@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, View, TextInput } from 'react-native'
 
-const CustomInput = ({ label, multiline, field, setField }) => {
+const CustomInput = ({ label, multiline, field, setField, placeholder }) => {
 
 
     return (
@@ -11,6 +11,7 @@ const CustomInput = ({ label, multiline, field, setField }) => {
             <TextInput
                 value={field}
                 onChangeText={setField}
+                placeholder={placeholder}
                 multiline={multiline}
                 textAlignVertical={multiline ? 'top' : "center"}
                 style={[styles.inputStyle, { height: multiline ? 135 : 45 }]}

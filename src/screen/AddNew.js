@@ -30,22 +30,26 @@ const AddNew = () => {
         <View style={styles.container}>
             <ScrollView style={styles.formContainer} showsVerticalScrollIndicator={false}>
                 <CustomInput
+                    placeholder={"John Doe"}
                     label={"Name Surname:"}
                     field={fullName}
                     setField={setFullName}
                 />
                 <CustomInput
                     label={"Job Title:"}
+                    placeholder={"Author"}
                     field={jobTitle}
                     setField={setJobTitle}
                 />
                 <CustomInput
                     multiline
                     label={"About Him/Her:"}
+                    placeholder={"..."}
                     field={about}
                     setField={setAbout}
                 />
                 <CustomInput
+                    placeholder={"Book"}
                     field={imageLink}
                     setField={setImageLink}
                     label={"Image Link:"}
